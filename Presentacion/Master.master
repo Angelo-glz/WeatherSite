@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+      .auto-style1 {
+        width: 100%;
+      }
+      .auto-style2 {
+        width: 178px;
+      }
+      .auto-style3 {
+        width: 1182px;
+      }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="auto-style1">
+          <tr>
+            <td class="auto-style2">Bienvenido,
+              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td class="auto-style3">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="auto-style2">
+              <br />
+              <asp:Menu ID="Menu1" runat="server">
+                  <Items>
+                      <asp:MenuItem Text="Empleados" Value="Empleados">
+                          <asp:MenuItem Text="ABMEmpleados" Value="New Item" NavigateUrl="~/ABMEmpleado.aspx"></asp:MenuItem>
+                          <asp:MenuItem Text="ABMCiudades" Value="New Item" NavigateUrl="~/ABMCiudad.aspx"></asp:MenuItem>
+                          <asp:MenuItem Text="ABMMeteorologo" Value="New Item" NavigateUrl="~/ABMMeteorologo.aspx"></asp:MenuItem>
+                          <asp:MenuItem Text="Listado de Pronosticos" Value="Listado de Pronosticos" NavigateUrl="~/ListadoPronosticos.aspx"></asp:MenuItem>
+                          <asp:MenuItem NavigateUrl="~/ListadoSinAsignacion.aspx" Text="Listado Sin Asignacion" Value="Listado Sin Asignacion"></asp:MenuItem>
+                      </asp:MenuItem>
+                      <asp:MenuItem Text="Meteorologos" Value="Meteorologos">
+                          <asp:MenuItem Text="Alta Pronostico" Value="New Item" NavigateUrl="~/GenerarPronostico.aspx"></asp:MenuItem>
+                      </asp:MenuItem>
+                      <asp:MenuItem Text="Salir" Value="Salir" NavigateUrl="~/Logueo.aspx"></asp:MenuItem>
+                  </Items>
+              </asp:Menu>
+              <br />
+            </td>
+            <td class="auto-style3">
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+              </asp:ContentPlaceHolder>
+            </td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="auto-style2">
+              <asp:Button ID="btnSalir" runat="server" Text="Cerrar sesion" OnClick="btnSalir_Click" />
+            </td>
+            <td class="auto-style3">
+              <asp:Label ID="lblError" runat="server"></asp:Label>
+            </td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        <br />
+        <br />
+    </div>
+    </form>
+</body>
+</html>
